@@ -147,8 +147,8 @@ static void DbgPrintW(LPCWSTR format, ...)
         WCHAR buffer[512];
         va_list argp;
         va_start(argp, format);
-        //vswprintf_s(buffer, sizeof(buffer)/sizeof(WCHAR), format, argp);
-        vswprintf(buffer, format, argp);
+        vswprintf_s(buffer, sizeof(buffer)/sizeof(WCHAR), format, argp);
+        //vswprintf(buffer, format, argp);
         va_end(argp);
         if (g_UseStdErr) {
             fwprintf(stderr, buffer);
@@ -163,8 +163,8 @@ static void AlwaysPrintW(LPCWSTR format, ...)
     WCHAR buffer[512];
     va_list argp;
     va_start(argp, format);
-    //vswprintf_s(buffer, sizeof(buffer)/sizeof(WCHAR), format, argp);
-    vswprintf(buffer, format, argp);
+    vswprintf_s(buffer, sizeof(buffer)/sizeof(WCHAR), format, argp);
+    //vswprintf(buffer, format, argp);
     va_end(argp);
     fwprintf(stderr, buffer);
 }

@@ -18,6 +18,7 @@
 #include <signal.h>
 #include <string>
 
+typedef unsigned long	sigset_t;
 // Returns a string showing the set of blocked signals for the calling thread.
 // Other threads may have a different set (this is per-thread thing).
 //extern std::string signal_mask_to_str();

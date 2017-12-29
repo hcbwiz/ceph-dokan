@@ -105,7 +105,7 @@ struct timespec {
 
 #define S_IFLNK	 0120000
 
-typedef long off_t;
+//typedef long off_t;
 typedef long long loff_t;
 
 typedef unsigned long long __fsblkcnt64_t;
