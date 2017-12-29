@@ -38,7 +38,7 @@
 #define    EPIPE         32    /* Broken pipe */
 #define    EDOM          33    /* Math argument out of domain of func */
 #define    ERANGE        34    /* Math result not representable */
-#define    EOPNOTSUPP    95    /* Operation not supported on transport endpoint */
+//#define    EOPNOTSUPP    95    /* Operation not supported on transport endpoint */
 /*
  * The virtio configuration space is defined to be little-endian.  x86 is
  * little-endian too, but it's nice to be explicit so we have these helpers.
@@ -65,13 +65,13 @@ inline void * __must_check ERR_CAST(const void *ptr)
     return (void *) ptr;
 }
 
-inline int __must_check PTR_RET(const void *ptr)
+/*inline int __must_check PTR_RET(const void *ptr)
 {
     if (IS_ERR(ptr))
         return PTR_ERR(ptr);
     else
         return 0;
-}
+}*/
 
 #define UID_GID_MAP_MAX_EXTENTS 5
 

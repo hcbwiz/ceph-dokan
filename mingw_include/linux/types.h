@@ -92,14 +92,14 @@ struct timespec {
 # define __struct_timespec_defined  1
 #endif /* __struct_timespec_defined */
 
-#define    EOPNOTSUPP   95    /* Operation not supported on transport endpoint */
+//#define    EOPNOTSUPP   95    /* Operation not supported on transport endpoint */
 #define    EBADE        52    /* Invalid exchange */
-#define    ELOOP        40    /* Too many symbolic links encountered */
-#define    ECANCELED   140    /* Operation canceled. */
+//#define    ELOOP        40    /* Too many symbolic links encountered */
+//#define    ECANCELED   140    /* Operation canceled. */
 #define    ENODATA      61    /* No data available */
 #define    ESTALE      116    /* Stale NFS file handle */
-#define    ENOTCONN    107    /* Transport endpoint is not connected */
-#define    EISCONN     106    /* Transport endpoint is already connected */
+//#define    ENOTCONN    107    /* Transport endpoint is not connected */
+//#define    EISCONN     106    /* Transport endpoint is already connected */
 
 #define strerror_r(errno, a, b) errno
 

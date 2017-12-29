@@ -8,7 +8,7 @@
 
 #include "CrushWrapper.h"
 #include "CrushTreeDumper.h"
-#define EALREADY 114
+//#define EALREADY 114
 #define dout_subsys ceph_subsys_crush
 
 bool CrushWrapper::has_v2_rules() const

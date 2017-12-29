@@ -5855,7 +5855,7 @@ int Client::opendir(const char *relpath, dir_result_t **dirpp)
   if (r < 0)
     return r;
   r = _opendir(in, dirpp);
-  tout(cct) << (unsigned long)*dirpp << std::endl;
+  tout(cct) << (unsigned long long)*dirpp << std::endl;
   return r;
 }
 
@@ -5880,7 +5880,7 @@ int Client::closedir(dir_result_t *dir)
 {
   Mutex::Locker lock(client_lock);
   tout(cct) << "closedir" << std::endl;
-  tout(cct) << (unsigned long)dir << std::endl;
+  tout(cct) << (unsigned long long)dir << std::endl;
 
   ldout(cct, 3) << "closedir(" << dir << ") = 0" << dendl;
   _closedir(dir);

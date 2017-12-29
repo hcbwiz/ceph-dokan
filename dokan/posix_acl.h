@@ -155,8 +155,8 @@ struct posix_acl {
 //    return (void *) error;
 //}
 #define ERR_PTR(error) (void *)error
-#define PTR_ERR(ptr) (long)ptr
-#define IS_ERR(ptr) IS_ERR_VALUE((unsigned long)ptr)
+#define PTR_ERR(ptr) (long long)ptr
+#define IS_ERR(ptr) IS_ERR_VALUE((unsigned long long)ptr)
 #define IS_ERR_OR_NULL(ptr) (!ptr || IS_ERR_VALUE((unsigned long)ptr))
 
 //inline long __must_check PTR_ERR(const void *ptr)

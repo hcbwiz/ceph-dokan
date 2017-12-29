@@ -160,7 +160,7 @@ namespace ceph {
       return -ENOTSUP;
     }
     virtual bool is_page_aligned() {
-      return ((long)data & ~CEPH_PAGE_MASK) == 0;
+      return ((long long)data & ~CEPH_PAGE_MASK) == 0;
     }
     bool is_n_page_sized() {
       return (len & ~CEPH_PAGE_MASK) == 0;
@@ -226,7 +226,7 @@ namespace ceph {
     raw_hack_aligned(unsigned l, unsigned _align) : raw(l) {
       align = _align;
       realdata = new char[len+align-1];
-      unsigned off = ((unsigned)realdata) & (align-1);
+      unsigned off = ((unsigned long long)realdata) & (align-1);
       if (off)
 	data = realdata + align - off;
       else
@@ -235,7 +235,7 @@ namespace ceph {
       //cout << "hack aligned " << (unsigned)data
       //<< " in raw " << (unsigned)realdata
       //<< " off " << off << std::endl;
-      assert(((unsigned)data & (align-1)) == 0);
+      assert(((unsigned long long)data & (align-1)) == 0);
     }
     ~raw_hack_aligned() {
       delete[] realdata;

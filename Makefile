@@ -3,7 +3,7 @@ CC        = gcc -D__USE_FILE_OFFSET64 -DHAVE_CONFIG_H -I. -D__CEPH__ -D_FILE_OFF
 CPP       = g++ -D__USE_FILE_OFFSET64 -DHAVE_CONFIG_H -I. -D__CEPH__ -D_FILE_OFFSET_BITS=64 -D_REENTRANT -D_THREAD_SAFE -D__STDC_FORMAT_MACROS -D_GNU_SOURCE -fno-strict-aliasing -fsigned-char -Wno-invalid-offsetof -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free -g -DPIC
 
 BOOST_PATH=D:\boost_1_66_0
-BOOST_SYSTEM_LIB=libboost_system-mgw72-mt-x32-1_66.a
+BOOST_SYSTEM_LIB=libboost_system-mgw72-mt-x64-1_66.a
 CEPH_INCLUDE = -I./ -I./global -I./mingw_include -I$(BOOST_PATH)
 CFLAGS   = $(CEPH_INCLUDE)
 CLIBS    =
@@ -70,5 +70,5 @@ ceph-dokan.exe:dokan/ceph_dokan.o dokan/posix_acl.o dokan/dokan.lib $(OBJECTS) $
 	@echo "**************************************************************"
 
 clean:
-	rm -f $(OBJECTS) dokan/*.o *.o libcephfs.dll ceph-dokan.exe test-cephfs.exe
+	del $(OBJECTS) dokan/*.o *.o libcephfs.dll ceph-dokan.exe test-cephfs.exe
 
